@@ -2,13 +2,23 @@ const nodemailer = require('nodemailer');
 
 const sendOtp = async (email, otp) => {
   try {
+    // const transporter = nodemailer.createTransport({
+    //   service: 'gmail', // Replace with your email service
+    //   auth: {
+    //     user: process.env.EMAIL_USER,
+    //     pass: process.env.EMAIL_PASS,
+    //   },
+    // });
     const transporter = nodemailer.createTransport({
-      service: 'gmail', // Replace with your email service
+      port: 465,
+      service: "gmail",
+      secure: true,
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: "kashyapshivram512@gmail.com",
+        pass:  'kmbc nqqe cavl eyma',
       },
     });
+    
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
